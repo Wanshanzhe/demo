@@ -12,7 +12,7 @@
     <groupId>com.wsz</groupId>
     <artifactId>demo-utils</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo-api</name>
+    <name>demo-utils</name>
     <description>后台公共工具模块</description>
 
     <properties>

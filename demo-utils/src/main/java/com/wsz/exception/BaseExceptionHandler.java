@@ -1,5 +1,6 @@
 package com.wsz.exception;
 
+import com.wsz.common.vo.BaseResponseVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
