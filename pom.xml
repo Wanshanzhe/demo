@@ -20,7 +20,7 @@
         <module>demo-api</module>
         <module>demo-utils</module>
         <module>demo-common</module>
-        <module>demo-entity</module>
+        <module>demo-pojo</module>
         <module>demo-test</module>
     </modules>
 
@@ -31,6 +31,9 @@
         <log4j.version>1.2.17</log4j.version>
         <guava.version>28.1-jre</guava.version>
         <fastjson.version>1.2.60</fastjson.version>
+        <mysql.version>8.0.27</mysql.version>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <mybatis-plus-generator.version>3.5.2</mybatis-plus-generator.version>
     </properties>
 
     <dependencies>
@@ -40,15 +43,16 @@
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- Lombok 依赖 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <!-- ThymeLeaf 依赖 -->
@@ -61,19 +65,27 @@
     <dependencyManagement>
         <dependencies>
 
-<!--            &lt;!&ndash; Druid引入 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.alibaba</groupId>-->
-<!--                <artifactId>druid-spring-boot-starter</artifactId>-->
-<!--                <version>${druid.version}</version>-->
-<!--            </dependency>-->
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+                <scope>runtime</scope>
+            </dependency>
 
-<!--            &lt;!&ndash; 数据源驱动 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>mysql</groupId>-->
-<!--                <artifactId>mysql-connector-java</artifactId>-->
-<!--                <version>${mysql.version}</version>-->
-<!--            </dependency>-->
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- mybatis-plus-generator -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
 
             <!-- 日志框架依赖 -->
             <dependency>
