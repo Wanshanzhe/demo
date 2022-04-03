@@ -17,7 +17,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <project.vesion>0.0.1-SNAPSHOT</project.vesion>
     </properties>
 
     <dependencies>
@@ -34,6 +33,12 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!-- Druid引入 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
         <!-- mybatis-plus -->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -45,6 +50,7 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
         </dependency>
+
 
         <!-- 日志框架依赖 -->
         <dependency>

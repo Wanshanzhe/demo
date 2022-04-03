@@ -1,6 +1,6 @@
 package com.wsz.common.vo;
 
-import com.wsz.exception.CommonServiceException;
+import com.wsz.enums.RespBeanEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,29 +21,37 @@ public class BaseResponseVO<M> {
     private String message; // 异常信息
     private M data;         // 业务数据返回
 
-    // 成功但是无参数
+    /**
+     * 成功的返回结果
+     * @return
+     */
     public static BaseResponseVO success(){
-        BaseResponseVO response = new BaseResponseVO();
-        response.setCode(200);
-        response.setMessage("");
-        return response;
+        return new BaseResponseVO(RespBeanEnum.SUCCESS.getCode(), RespBeanEnum.SUCCESS.getMessage(), null);
     }
 
-    // 成功有参数
+    /**
+     * 成功的返回结果（携带对象）
+     * @return
+     */
     public static<M> BaseResponseVO success(M data){
-        BaseResponseVO response = new BaseResponseVO();
-        response.setCode(200);
-        response.setMessage("");
-        response.setData(data);
-        return response;
+        return new BaseResponseVO(RespBeanEnum.SUCCESS.getCode(), RespBeanEnum.SUCCESS.getMessage(), data);
     }
 
-    // 出现业务异常
-    public static<M> BaseResponseVO serviceException(CommonServiceException e){
-        BaseResponseVO response = new BaseResponseVO();
-        response.setCode(e.getCode());
-        response.setMessage(e.getMessage());
-        return response;
+    /**
+     * 失败的返回结果
+     * @return
+     */
+    public static BaseResponseVO error(RespBeanEnum respBeanEnum){
+        return new BaseResponseVO(respBeanEnum.getCode(), respBeanEnum.getMessage(), null);
+    }
+
+
+    /**
+     * 失败的返回结果（携带对象）
+     * @return
+     */
+    public static BaseResponseVO error(RespBeanEnum respBeanEnum, Object obj){
+        return new BaseResponseVO(respBeanEnum.getCode(), respBeanEnum.getMessage(), obj);
     }
 
 }

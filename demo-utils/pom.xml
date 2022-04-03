@@ -23,7 +23,7 @@
 
         <dependency>
             <groupId>com.wsz</groupId>
-            <artifactId>demo-entity</artifactId>
+            <artifactId>demo-pojo</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

@@ -1,6 +1,9 @@
 package com.wsz.exception;
 
+import com.wsz.enums.RespBeanEnum;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author wanshanzhe
@@ -10,13 +13,9 @@ import lombok.Data;
  * @createTime 2022年04月01日 17:07:00
  */
 @Data
-public class CommonServiceException extends Exception{
+@NoArgsConstructor
+@AllArgsConstructor
+public class CommonServiceException extends RuntimeException{
 
-    private Integer code;
-    private String message;
-
-    public CommonServiceException(int code,String message){
-        this.code = code;
-        this.message = message;
-    }
+    private RespBeanEnum respBeanEnum;
 }

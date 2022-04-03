@@ -26,5 +26,10 @@ spring:
       connection-timeout: 30000
       connection-test-query: SELECT 1
 
+# mybatis plus相关配置
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.wsz.demo-test.pojo
+
 logging:
   config: classpath:logback.xml
